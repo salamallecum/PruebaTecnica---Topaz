@@ -12,15 +12,6 @@
       "request": {
         "method": "POST",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"nombres\": \"Sindy Tatiana\",\r\n    \"apellidos\": \"Rodriguez Martinez\",\r\n    \"usuario\": \"Tatis94\",\r\n    \"clave\": \"123456\",\r\n    \"telefono\": \"6726648\",\r\n    \"edad\": \"32\",\r\n    \"direccion\": \"Calle 13\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
           "raw": "http://localhost:8080/trnasacciones/1/reversar",
           "protocol": "http",
