@@ -10,7 +10,7 @@
     {
       "name": "Reversar",
       "request": {
-        "method": "POST",
+        "method": "PATCH",
         "header": [],
         "url": {
           "raw": "http://localhost:8080/transacciones/1/reversar",
