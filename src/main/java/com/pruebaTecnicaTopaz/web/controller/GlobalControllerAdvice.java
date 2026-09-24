@@ -1,6 +1,7 @@
 package com.pruebaTecnicaTopaz.web.controller;
 
 
+import com.pruebaTecnicaTopaz.exception.PruebaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -19,8 +20,8 @@ import static com.pruebaTecnicaTopaz.util.ErrorCatalog.PRUEBA;
 public class GlobalControllerAdvice {
 
     //Método encargado de definir la excepción que se lanza cuando
-    //@ResponseStatus(HttpStatus.NOT_FOUND)
-    //@ExceptionHandler(.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(PruebaException.class)
     public ErrorResponse handEstudianteNotFoundException() {
         return ErrorResponse.builder()
                 .codigoError(PRUEBA.getCode())
@@ -30,8 +31,8 @@ public class GlobalControllerAdvice {
     }
 
     //Método encargado de definir la excepción que se lanza cuando hay un error en la validación de los datos del estudiante
-    //@ResponseStatus(HttpStatus.BAD_REQUEST)
-    //@ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ErrorResponse handMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
         //Obtenemos el BindingResult que contiene los errores de validación
         BindingResult bindingResult = ex.getBindingResult();
