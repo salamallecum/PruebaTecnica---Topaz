@@ -9,7 +9,8 @@ import lombok.Getter;
 public enum ErrorCatalog {
 
     //Códigos de error definidos para la aplicación, con su respectivo mensaje de error
-    PRUEBA("ERR-EST-001", "PRUEBA.");
+    ESTADO_INCORRECTO("ERR-EST-001", "Transacción en estado incorrecto para la operación solicitada"),
+    VENCIDA("ERR-VEN-001", "Transacción no puede ser reversada, ya que fue creada hace más de 24 horas.");
 
     private final String code;
     private final String message;

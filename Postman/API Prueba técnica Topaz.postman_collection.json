@@ -1,0 +1,41 @@
+{
+  "info": {
+    "_postman_id": "c86b8b6d-92f7-492b-803e-c4a68564414d",
+    "name": "API Prueba técnica Topaz",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38051556",
+    "_collection_link": "https://go.postman.co/collection/38051556-c86b8b6d-92f7-492b-803e-c4a68564414d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Reversar",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombres\": \"Sindy Tatiana\",\r\n    \"apellidos\": \"Rodriguez Martinez\",\r\n    \"usuario\": \"Tatis94\",\r\n    \"clave\": \"123456\",\r\n    \"telefono\": \"6726648\",\r\n    \"edad\": \"32\",\r\n    \"direccion\": \"Calle 13\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/trnasacciones/1/reversar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "trnasacciones",
+            "1",
+            "reversar"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
