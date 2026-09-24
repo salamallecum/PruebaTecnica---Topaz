@@ -13,14 +13,14 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/trnasacciones/1/reversar",
+          "raw": "http://localhost:8080/transacciones/1/reversar",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "trnasacciones",
+            "transacciones",
             "1",
             "reversar"
           ]
