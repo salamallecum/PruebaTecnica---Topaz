@@ -2,6 +2,7 @@ package com.pruebaTecnicaTopaz.web.controller;
 
 
 import com.pruebaTecnicaTopaz.exception.TransaccionEnEstadoIncorrectoException;
+import com.pruebaTecnicaTopaz.exception.TransaccionNoEncontradaException;
 import com.pruebaTecnicaTopaz.exception.TransaccionVencidaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -38,6 +39,17 @@ public class GlobalControllerAdvice {
         return ErrorResponse.builder()
                 .codigoError(VENCIDA.getCode())
                 .mensaje(VENCIDA.getMessage())
+                .timestamp(LocalDateTime.now())
+                .build();
+    }
+
+    //Método encargado de definir la excepción que se lanza cuando la transaccion está vencida
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(TransaccionNoEncontradaException.class)
+    public ErrorResponse handTransaccionNoEncontradaException() {
+        return ErrorResponse.builder()
+                .codigoError(NO_ENCONTRADA.getCode())
+                .mensaje(NO_ENCONTRADA.getMessage())
                 .timestamp(LocalDateTime.now())
                 .build();
     }

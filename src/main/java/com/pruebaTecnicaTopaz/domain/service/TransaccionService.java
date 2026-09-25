@@ -1,6 +1,7 @@
 package com.pruebaTecnicaTopaz.domain.service;
 
 import com.pruebaTecnicaTopaz.exception.TransaccionEnEstadoIncorrectoException;
+import com.pruebaTecnicaTopaz.exception.TransaccionNoEncontradaException;
 import com.pruebaTecnicaTopaz.exception.TransaccionVencidaException;
 import com.pruebaTecnicaTopaz.persistence.entity.Transaccion;
 import com.pruebaTecnicaTopaz.persistence.repository.TransaccionRepository;
@@ -38,6 +39,8 @@ public class TransaccionService {
                     throw new TransaccionEnEstadoIncorrectoException("Transacción en estado incorrecto para reversar. Estado actual: " + transac.getEstado());
                 }
             }
+        }else{
+            throw new TransaccionNoEncontradaException("Transacción con id " + id + " no encontrada.");
         }
     }
 }
